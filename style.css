@@ -1,0 +1,157 @@
+/* Import Font - Biarkan tetap seperti ini */
+@font-face {
+    font-family: 'O0hwafa';
+    src: url('font/O0hwafa.ttf') format('truetype'); /* Ganti .ttf ke .otf jika formatnya berbeda */
+}
+
+/* Reset CSS - Biarkan tetap seperti ini */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* UBAH: Gunakan warna pink sebagai latar belakang layar penuh */
+    background-color: #ffeef2; 
+    
+    /* UBAH: Hilangkan flex centering pada body agar main-container bisa full-screen */
+    /* Hapus baris di bawah ini jika kamu mengikutinya langkah-langkah sebelumnya */
+    /* display: flex; justify-content: center; align-items: center; */
+    
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Mencegah scrollbar muncul jika tidak diperlukan */
+    font-family: 'O0hwafa', sans-serif;
+}
+
+/* Kotak Halaman Utama - SEKARANG MENJADI LAYAR PENUH */
+.main-container {
+    /* UBAH: Menjadi ukuran layar penuh */
+    width: 100%;
+    height: 100vh;
+    
+    /* Hapus baris di bawah ini */
+    /* max-width: 900px; aspect-ratio: 16 / 10; padding: 15px; box-shadow: ...; */
+    
+    background-color: #ffeef2; /* Pink pastel */
+    position: relative; /* Agar posisi letter-icon dan border-frame benar */
+}
+
+/* Garis Pembatas di dalam - MENYESUAIKAN UKURAN LAYAR */
+.border-frame {
+    /* UBAH: Letakkan dengan padding tipis di pinggir layar */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid #e3b5be;
+
+    /* Gunakan flex untuk memusatkan konten di tengah-tengah layar besar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icon Surat Pojok Kanan Atas - JANGAN DIUBAH, sudah benar */
+.letter-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.letter-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Konten Logo & Tombol Start - JANGAN DIUBAH, sudah benar */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.main-logo {
+    /* UBAH: Beri ukuran yang lebih pantas untuk layar desktop besar */
+    width: 350px; /* Sedikit lebih besar dari sebelumnya */
+    max-width: 80%;
+}
+
+.start-btn {
+    /* JANGAN DIUBAH, sudah benar */
+    background-color: #fcebd5; 
+    color: #8c7355; 
+    border: 2px solid #f0b2c1;
+    border-radius: 20px;
+    padding: 10px 60px; /* Sedikit lebih gemuk agar lebih proporsional */
+    font-family: 'O0hwafa', sans-serif;
+    font-size: 2.2rem; /* Sedikit lebih besar */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #f7dcb5;
+    transform: translateY(-3px);
+}
+
+/* ==================================
+   STYLE UNTUK POP-UP ANIMASI 
+   JANGAN DIUBAH, sudah benar 
+   ================================== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Efek redup di belakang pop-up */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Disembunyikan secara default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 100;
+}
+
+/* Animasi Muncul */
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    position: relative;
+    transform: scale(0.5); /* Mulai dari ukuran kecil */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek memantul (bouncy) */
+}
+
+.popup-overlay.show .popup-content {
+    transform: scale(1); /* Membesar ke ukuran normal */
+}
+
+.popup-image {
+    width: 400px;
+    display: block;
+}
+
+/* Area klik transparan untuk tombol X yang sudah ada di gambar */
+.close-btn {
+    position: absolute;
+    top: 15px; 
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Pastikan berada di atas gambar untuk area klik */
+}
