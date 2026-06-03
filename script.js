@@ -1,21 +1,37 @@
 document.addEventListener("DOMContentLoaded", function() {
     const popup = document.getElementById("welcomePopup");
     const closeBtn = document.getElementById("closePopupBtn");
+    const letterIcon = document.getElementById("letterIcon");
+    const sideMenu = document.getElementById("sideMenu");
+    const closeMenuBtn = document.getElementById("closeMenuBtn");
+    const sideMenuOverlay = document.getElementById("sideMenuOverlay");
 
-    // 1. Munculkan pop up otomatis 500ms setelah halaman selesai diload
     setTimeout(() => {
         popup.classList.add("show");
     }, 500);
 
-    // 2. Tutup pop up jika tombol X (area invisible) diklik
     closeBtn.addEventListener("click", () => {
         popup.classList.remove("show");
     });
 
-    // 3. Opsional: Tutup pop up kalau user asal klik area abu-abu di luarnya
     popup.addEventListener("click", (e) => {
         if (e.target === popup) {
             popup.classList.remove("show");
         }
+    });
+
+    letterIcon.addEventListener("click", () => {
+        sideMenu.classList.add("open");
+        sideMenuOverlay.classList.add("show");
+    });
+
+    closeMenuBtn.addEventListener("click", () => {
+        sideMenu.classList.remove("open");
+        sideMenuOverlay.classList.remove("show");
+    });
+
+    sideMenuOverlay.addEventListener("click", () => {
+        sideMenu.classList.remove("open");
+        sideMenuOverlay.classList.remove("show");
     });
 });

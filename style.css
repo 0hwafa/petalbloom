@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'O0hwafa';
-    src: url('font/O0hwafa.ttf') format('truetype'); /* Ganti .ttf ke .otf jika formatnya berbeda */
+    src: url('font/O0hwafa.ttf') format('truetype');
 }
 
 * {
@@ -11,7 +11,6 @@
 
 body {
     background-color: #ffeef2; 
-    
     height: 100vh;
     width: 100vw;
     overflow: hidden; 
@@ -21,8 +20,6 @@ body {
 .main-container {
     width: 100%;
     height: 100vh;
-    
-    
     background-color: #ffeef2;
     position: relative; 
 }
@@ -34,7 +31,6 @@ body {
     right: 15px;
     bottom: 15px;
     border: 2px solid #e3b5be;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,20 +78,16 @@ body {
     transform: translateY(-3px);
 }
 
-/* ==================================
-   STYLE UNTUK POP-UP ANIMASI 
-   ================================== */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Efek redup di belakang pop-up */
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
-    
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -109,12 +101,12 @@ body {
 
 .popup-content {
     position: relative;
-    transform: scale(0.5); /* Mulai dari ukuran kecil */
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek memantul (bouncy) */
+    transform: scale(0.5);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .popup-overlay.show .popup-content {
-    transform: scale(1); /* Membesar ke ukuran normal */
+    transform: scale(1);
 }
 
 .popup-image {
@@ -132,4 +124,77 @@ body {
     border: none;
     cursor: pointer;
     z-index: 10; 
+}
+
+.side-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 90;
+}
+
+.side-menu-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 30%;
+    height: 100%;
+    background-color: #fcebd5;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    z-index: 95;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-family: Uwap;
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.close-menu-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #8c7355;
+    cursor: pointer;
+    font-family: 'O0hwafa', sans-serif;
+    margin-bottom: 40px;
+    transition: transform 0.2s ease;
+}
+
+.close-menu-btn:hover {
+    transform: scale(1.1);
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #8c7355;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu-links a:hover {
+    color: #e3b5be;
+    padding-left: 10px;
 }
