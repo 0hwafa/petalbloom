@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomopedia</title>
+    <link rel="stylesheet" href="bloomopedia.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Bloomopedia</h1>
+        <img src="picture/letter.png" alt="Menu" class="letter-icon" id="letterIcon">
+    </header>
+
+    <main class="main-content">
+        <section class="search-section">
+            <h2 class="search-title">Mau belajar apa hari ini?</h2>
+            <div class="search-row">
+                <div class="search-input-box">
+                    <input type="text" placeholder="">
+                    <img src="picture/search pink.png" alt="Search" class="search-icon" onerror="this.style.display='none'; this.parentNode.innerHTML='&#x2630;';">
+                </div>
+                
+                <div class="filter-wrapper">
+                    <button class="filter-btn" id="filterBtn">
+                        <img src="picture/filter.png" alt="Filter" onerror="this.style.display='none'; this.parentNode.innerHTML='&#x2630;';">
+                    </button>
+                    
+                    <div class="filter-menu" id="filterMenu">
+                        <div class="filter-search-text">
+                            Search Flower...
+                        </div>
+                        
+                        <div class="filter-group">
+                            <p class="filter-label">Sort By:</p>
+                            <div class="filter-item" id="btnSortAZ">▼ A-Z</div>
+                        </div>
+
+                        <div class="filter-group">
+                            <p class="filter-label">Filter:</p>
+                            <div class="filter-item filter-opt" data-filter="category">🌸 Category</div>
+                            <div class="filter-item filter-opt" data-filter="color">🎨 Color</div>
+                            <div class="filter-item filter-opt" data-filter="meaning">💖 Meaning</div>
+                            <div class="filter-item filter-opt" data-filter="careLevel">🪴 Care Level</div>
+                            <div class="filter-item filter-opt" data-filter="all">🌟 Tampilkan Semua</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards-section" id="cardsContainer">
+        </section>
+
+        <section class="fotd-section">
+            <div class="fotd-box">
+                <img src="picture/isi the letter.png" alt="Frame" class="fotd-bg-img">
+                
+                <div class="fotd-text-wrapper">
+                    <h3 class="fotd-title">Flower for today!</h3>
+                    <div id="dailyContent" class="fotd-content">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-polkadot"></footer>
+
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <button class="close-menu-btn" id="closeMenuBtn">X</button>
+        <div class="menu-links">
+            <a href="index.html">Dashboard</a>
+            <a href="bloomopedia.html">Bloomopedia</a>
+            <a href="#">Flower Meanings</a>
+            <a href="#">Flowers Colors</a>
+            <a href="#">Fun Facts</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <script src="bloomopedia.js"></script>
+</body>
+</html>
