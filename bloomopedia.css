@@ -384,3 +384,82 @@ body {
     color: #df88a5;
     transform: translateX(5px);
 }
+
+/* =========================================
+   TAMPILAN MOBILE (Responsive untuk Bloomopedia)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .letter-icon {
+        width: 35px;
+        right: 15px;
+    }
+
+    .main-content {
+        padding: 20px 15px 90px 15px;
+    }
+
+    .search-row {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .search-input-box {
+        width: 70%; 
+        max-width: 250px;
+    }
+
+    .filter-btn img {
+        width: 35px;
+    }
+
+    .card {
+        width: 120px;
+        height: 160px;
+    }
+
+    .card-img-wrapper {
+        height: 100px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .fotd-title {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .fotd-content {
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+
+    .fotd-text-wrapper {
+        padding: 8% 12%; 
+    }
+
+    .side-menu {
+        width: 70%; 
+        right: -70%; 
+    }
+
+    .side-menu.open {
+        right: 0;
+    }
+    
+    .filter-menu {
+        width: 180px;
+        right: -10px; 
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .search-input-box {
+        width: 200px;
+    }
+}

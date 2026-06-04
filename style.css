@@ -198,3 +198,46 @@ body {
     color: #e3b5be;
     padding-left: 10px;
 }
+
+/* =========================================
+   TAMPILAN MOBILE (Responsive untuk Dashboard)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .main-logo {
+        width: 250px; 
+    }
+
+    .start-btn {
+        font-size: 1.8rem;
+        padding: 8px 40px;
+    }
+
+    .letter-icon {
+        width: 45px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .popup-image {
+        width: 80%; 
+        max-width: 320px;
+    }
+
+    .side-menu {
+        width: 70%;
+        right: -70%; 
+    }
+
+    .side-menu.open {
+        right: 0;
+    }
+
+    .menu-links a {
+        font-size: 1.8rem;
+    }
+
+    .close-menu-btn {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
