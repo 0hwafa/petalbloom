@@ -45,6 +45,19 @@ body {
     transform: scale(1.1) rotate(5deg);
 }
 
+.logo-icon {
+    position: absolute;
+    left: 20px;
+    width: 45px;
+    top: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .main-content {
     flex: 1;
     display: flex;
